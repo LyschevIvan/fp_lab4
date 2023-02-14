@@ -21,18 +21,22 @@ jobs:
       with:
         dotnet-version: 6.0.x
     - name: Setup linter  
-      run: |
-          cd ./lab4
-          dotnet tool install -g dotnet-fsharplint
+      run: dotnet tool install -g dotnet-fsharplint
     - name: Setup formatter
       run: dotnet tool install -g fantomas
     - name: Restore dependencies
-      run: dotnet restore
+      run: |
+          cd ./lab4
+          dotnet restore
     - name: Build
-      run: dotnet build --no-restore
+      run: |
+          cd ./lab4
+          dotnet build --no-restore
     - name: Lint 
       run: |
-           dotnet fsharplint lint App.fs
+          cd ./lab4
+          dotnet fsharplint lint App.fs
     - name: Format 
       run: |
-           fantomas App.fs
+          cd ./lab4
+          fantomas App.fs
