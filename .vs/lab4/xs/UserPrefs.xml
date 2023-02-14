@@ -1,0 +1,33 @@
+﻿<Properties StartupConfiguration="{811DFDE9-E697-49BF-AF61-D22EAC44349F}|Default">
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.lab4.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.78F5ABAC-B5F0-4FFA-93EB-07E162B6DBF1" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="lab4/GamePage.fs">
+    <Files>
+      <File FileName="lab4/App.fs" Line="86" Column="29" />
+      <File FileName="lab4/Logic.fs" Line="26" Column="1" />
+      <File FileName="lab4/Types.fs" Line="19" Column="20" />
+      <File FileName="lab4/EndGamePage.fs" Line="18" Column="33" />
+      <File FileName="lab4/GamePage.fs" Line="55" Column="53" />
+      <File FileName="lab4/MainPage.fs" Line="33" Column="1" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="lab4" expanded="True">
+            <Node name="lab4" expanded="True">
+              <Node name="Dependencies" expanded="True" />
+            </Node>
+            <Node name="lab4.iOS" expanded="True">
+              <Node name="AppDelegate.fs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+</Properties>
