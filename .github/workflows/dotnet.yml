@@ -22,7 +22,7 @@ jobs:
         dotnet-version: 6.0.x
     - name: Setup linter  
       run: |
-          cd /lab4
+          cd ./lab4
           dotnet tool install -g dotnet-fsharplint
     - name: Setup formatter
       run: dotnet tool install -g fantomas
