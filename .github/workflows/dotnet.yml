@@ -9,34 +9,23 @@ on:
   pull_request:
     branches: [ "main" ]
 
+  
+
 jobs:
   build:
 
-    runs-on: ubuntu-latest
+    runs-on: macos-latest
 
     steps:
-    - uses: actions/checkout@v3
+    - name: Checkout sources
+      uses: actions/checkout@v3
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
-        dotnet-version: 6.0.x
-    - name: Setup linter  
-      run: dotnet tool install -g dotnet-fsharplint
-    - name: Setup formatter
-      run: dotnet tool install -g fantomas
-    - name: Restore dependencies
-      run: |
-          cd ./lab4
-          dotnet restore
+        dotnet-version: 7.0.x
+    - name: Restore
+      run: dotnet restore 
     - name: Build
-      run: |
-          cd ./lab4
-          dotnet build --no-restore
-    - name: Lint 
-      run: |
-          cd ./lab4
-          dotnet fsharplint lint App.fs
-    - name: Format 
-      run: |
-          cd ./lab4
-          fantomas App.fs
+      run: dotnet build  --no-restore
+    - name: Test
+      run: dotnet test --no-build
