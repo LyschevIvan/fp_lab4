@@ -1,30 +1,33 @@
-﻿namespace lab4
+﻿namespace Lab4
 
 open Types
-module GameLogic = 
 
-    let checkSequential (array : Cell[]) =
+module GameLogic =
+
+    let checkSequential (array: Cell[]) =
         match array |> Array.distinct with
-        | [|X|] | [|O|] -> true
+        | [| X |]
+        | [| O |] -> true
         | _ -> false
 
-    let checkMainDiag (field:Cell[,]) : bool =
-        checkSequential [|for i in 0..field.GetLength(0)-1 -> field.[i,i]|]
+    let checkMainDiag (field: Cell[,]) : bool =
+        checkSequential [| for i in 0 .. field.GetLength(0) - 1 -> field.[i, i] |]
 
-    let checkSubDiag (field:Cell[,]) : bool =
-        checkSequential [|for i in 0..field.GetLength(0)-1 -> field.[i,field.GetLength(0)-1-i]|]
+    let checkSubDiag (field: Cell[,]) : bool =
+        checkSequential [| for i in 0 .. field.GetLength(0) - 1 -> field.[field.GetLength(0) - 1 - i, i] |]
 
-    let checkVertical (field:Cell[,]) : bool =
-        seq {for i in 0..field.GetLength(0)-1 -> field.[i ,*]}
-        |> Seq.map (fun row -> checkSequential row)
+    let checkVertical (field: Cell[,]) : bool =
+        seq { for i in 0 .. field.GetLength(0) - 1 -> field.[*, i] }
+        |> Seq.map checkSequential
         |> Seq.contains true
 
-    let checkHorizontal (field:Cell[,]) : bool =
-        seq {for i in 0..field.GetLength(0)-1 -> field.[* ,i]}
-        |> Seq.map (fun col -> checkSequential col)
-        |> Seq.contains true   
+    let checkHorizontal (field: Cell[,]) : bool =
+        seq { for i in 0 .. field.GetLength(1) - 1 -> field.[i, *] }
+        |> Seq.map checkSequential
+        |> Seq.contains true
 
-    let checkEnd (field:Cell[,]) : bool =
+    let checkEnd (field: Cell[,]) : bool =
         match field |> Seq.cast<Cell> |> Seq.distinct |> Seq.toList with
-        | [X;O] | [O;X] -> true
+        | [ X; O ]
+        | [ O; X ] -> true
         | _ -> false

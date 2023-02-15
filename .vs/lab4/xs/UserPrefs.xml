@@ -1,31 +1,42 @@
 ﻿<Properties StartupConfiguration="{811DFDE9-E697-49BF-AF61-D22EAC44349F}|Default">
-  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
-  <MonoDevelop.Ide.ItemProperties.lab4.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.78F5ABAC-B5F0-4FFA-93EB-07E162B6DBF1" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="lab4/GamePage.fs">
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.test FirstBuild="True">
+    <MonoDevelop.MacDev.AppleDevelopmentTeam />
+  </MonoDevelop.Ide.ItemProperties.test>
+  <MonoDevelop.Ide.Workbench ActiveDocument="lab4.Tests/Tests.fs">
     <Files>
-      <File FileName="lab4/App.fs" Line="86" Column="29" />
-      <File FileName="lab4/Logic.fs" Line="26" Column="1" />
-      <File FileName="lab4/Types.fs" Line="19" Column="20" />
-      <File FileName="lab4/EndGamePage.fs" Line="18" Column="33" />
-      <File FileName="lab4/GamePage.fs" Line="55" Column="53" />
-      <File FileName="lab4/MainPage.fs" Line="33" Column="1" />
+      <File FileName="lab4/App.fs" />
+      <File FileName="lab4/Types.fs" />
+      <File FileName="lab4/EndGamePage.fs" />
+      <File FileName="lab4/GamePage.fs" />
+      <File FileName="lab4/MainPage.fs" Line="13" Column="15" />
+      <File FileName="lab4/GameLogic.fs" Line="4" Column="1" />
+      <File FileName="lab4.iOS/AppDelegate.fs" Line="17" Column="45" />
+      <File FileName="lab4.Tests/Tests.fs" Line="18" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
           <Node name="lab4" expanded="True">
-            <Node name="lab4" expanded="True">
-              <Node name="Dependencies" expanded="True" />
+            <Node name="lab4.Tests" expanded="True">
+              <Node name="inputData" expanded="True" />
             </Node>
-            <Node name="lab4.iOS" expanded="True">
-              <Node name="AppDelegate.fs" selected="True" />
-            </Node>
+            <Node name="TestProject1" expanded="True" />
+          </Node>
+        </State>
+      </Pad>
+      <Pad Id="MonoDevelop.UnitTesting.TestPad">
+        <State name="__root__">
+          <Node name="lab4" expanded="True">
+            <Node name="lab4.Tests" selected="True" />
+            <Node name="TestProject1" expanded="True" />
           </Node>
         </State>
       </Pad>
     </Pads>
   </MonoDevelop.Ide.Workbench>
-  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.lab4.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.78F5ABAC-B5F0-4FFA-93EB-07E162B6DBF1" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>

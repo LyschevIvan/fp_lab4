@@ -1,8 +1,6 @@
-﻿namespace lab4
-//open type Fabulous.XamarinForms.View
-open Xamarin.Forms
+﻿namespace Lab4
+
 open Fabulous.XamarinForms
-open Fabulous
 open Types
 open type View
 
@@ -10,29 +8,36 @@ module EndGamePage =
     type Msg =
         | ToMain
         | Retry
-    type Model = {Winner : Cell; Size : int; WithAi : bool}
-    let init (winner : Cell, size : int, withAi : bool) = {Winner = winner; Size = size; WithAi = withAi}
+
+    type Model =
+        { Winner: Cell
+          Size: int
+          WithAi: bool }
+
+    let init (winner: Cell, size: int, withAi: bool) =
+        { Winner = winner
+          Size = size
+          WithAi = withAi }
+
     let update msg model =
         match msg with
         | ToMain -> model, Some MainPage
-        | Retry -> model, Some (GamePage (model.Size, model.WithAi))
+        | Retry -> model, Some(GamePage(model.Size, model.WithAi))
 
     let view model =
         ContentPage(
             "end game",
-            (VStack(){
+            (VStack() {
                 match model.Winner with
-                | X | O -> Label($"The winner is: {!model.Winner}!")
+                | X
+                | O -> Label($"The winner is: {!model.Winner}!")
                 | Null -> Label($"It's a draw!!!")
+
                 Button("Retry", Retry)
                 Button("Menu", ToMain)
-                
+
             })
                 .center(expand = true)
                 .gridRow(1)
-                .gridColumn(0)   
+                .gridColumn (0)
         )
-    
-    
-
-

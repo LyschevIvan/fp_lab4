@@ -1,4 +1,4 @@
-﻿namespace lab4
+﻿namespace Lab4
 
 module Types =
 
@@ -9,11 +9,11 @@ module Types =
 
     type GoTo =
         | GamePage of int * bool
-        | EndGamePage of Cell*int*bool
-        | MainPage 
-    let (!) (cell : Cell) =
+        | EndGamePage of Cell * int * bool
+        | MainPage
+
+    let (!) (cell: Cell) =
         match cell with
-        | X -> O        
+        | X -> O
         | O -> X
         | Null -> Null
-

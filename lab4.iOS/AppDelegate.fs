@@ -1,13 +1,11 @@
 namespace lab4.iOS
 
-open System
+open Lab4
 open UIKit
 open Foundation
-open Xamarin.Essentials
 open Xamarin.Forms
 open Xamarin.Forms.Platform.iOS
 open Fabulous.XamarinForms
-open lab4
 
 [<Register("AppDelegate")>]
 type AppDelegate() =
