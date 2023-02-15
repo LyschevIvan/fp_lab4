@@ -23,21 +23,20 @@ jobs:
         run: dotnet tool install -g fantomas
       - name: Restore dependencies
         run: |
-          cd ./lab4
-          dotnet restore
+          dotnet restore ./lab4/lab4.fsproj
+          dotnet restore ./lab4.Tests/lab4.Tests.fsproj
       - name: Build
         run: |
-          cd ./lab4
-          dotnet build --no-restore
+          dotnet build --no-restore ./lab4/lab4.fsproj
+          dotnet build --no-restore ./lab4.Tests/lab4.Tests.fsproj
       - name: Lint
         run: |
-          cd ./lab4
-          dotnet fsharplint lint *.fs
+          dotnet fsharplint lint ./lab4/*.fs
+          dotnet fsharplint lint ./lab4.Tests/*.fs
       - name: Format
         run: |
-          cd ./lab4
-          fantomas *.fs
+          fantomas ./lab4/*.fs
+          fantomas ./lab4.Tests/*.fs
       - name: Test
         run: |
-          cd ./lab4.Tests
-          dotnet test --verbosity normal
+          dotnet test --no-restore --verbosity normal ./lab4.Tests/lab4.Tests.fsproj 
